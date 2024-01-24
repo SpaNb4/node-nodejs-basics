@@ -4,11 +4,11 @@ import { pipeline } from 'node:stream/promises';
 import path from 'node:path';
 import { __dirname } from './utils.js';
 
-const destFilePath = path.join(__dirname, 'files', 'fileToWrite.txt');
+const destinationFilePath = path.join(__dirname, 'files', 'fileToWrite.txt');
 
 const write = async () => {
-  const destStream = fs.createWriteStream(destFilePath);
-  await pipeline(stdin, destStream);
+  const destinationStream = fs.createWriteStream(destinationFilePath);
+  await pipeline(stdin, destinationStream);
 };
 
 await write();
