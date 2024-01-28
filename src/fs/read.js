@@ -1,6 +1,8 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
-import { __dirname } from './utils.js';
+import { getDirectoryAbsolutePath } from '../utils.js';
+
+const __dirname = getDirectoryAbsolutePath(import.meta.url);
 
 const sourceFilePath = path.join(__dirname, 'files', 'fileToRead.txt');
 

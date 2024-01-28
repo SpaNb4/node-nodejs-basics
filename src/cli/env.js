@@ -1,7 +1,7 @@
 import { env } from 'node:process';
 
 const parseEnv = () => {
-  let resArr = [];
+  const resArr = [];
 
   for (let key in env) {
     if (key.startsWith('RSS_')) {

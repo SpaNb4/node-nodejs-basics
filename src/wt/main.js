@@ -1,10 +1,9 @@
 import { Worker } from 'node:worker_threads';
-import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 import os from 'os';
+import { getDirectoryAbsolutePath } from '../utils.js';
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+const __dirname = getDirectoryAbsolutePath(import.meta.url);
 
 const workerFilePath = path.join(__dirname, 'worker.js');
 

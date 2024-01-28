@@ -1,9 +1,8 @@
 import { fork } from 'node:child_process';
 import path from 'node:path';
-import { fileURLToPath } from 'node:url';
+import { getDirectoryAbsolutePath } from '../utils.js';
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+const __dirname = getDirectoryAbsolutePath(import.meta.url);
 
 const childFilePath = path.join(__dirname, 'files', 'script.js');
 

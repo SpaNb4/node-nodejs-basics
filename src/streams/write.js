@@ -2,7 +2,9 @@ import fs from 'node:fs';
 import { stdin } from 'node:process';
 import { pipeline } from 'node:stream/promises';
 import path from 'node:path';
-import { __dirname } from './utils.js';
+import { getDirectoryAbsolutePath } from '../utils.js';
+
+const __dirname = getDirectoryAbsolutePath(import.meta.url);
 
 const destinationFilePath = path.join(__dirname, 'files', 'fileToWrite.txt');
 

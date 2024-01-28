@@ -1,10 +1,9 @@
 import { createHash } from 'node:crypto';
 import { createReadStream } from 'node:fs';
 import path from 'node:path';
-import { fileURLToPath } from 'node:url';
+import { getDirectoryAbsolutePath } from '../utils.js';
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+const __dirname = getDirectoryAbsolutePath(import.meta.url);
 
 const sourceFilePath = path.join(__dirname, 'files', 'fileToCalculateHashFor.txt');
 
