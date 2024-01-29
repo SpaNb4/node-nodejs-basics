@@ -1,5 +1,22 @@
+import fs from 'node:fs/promises';
+import path from 'node:path';
+import { getDirectoryAbsolutePath } from '../utils.js';
+
+const __dirname = getDirectoryAbsolutePath(import.meta.url);
+
+const sourceFolderPath = path.join(__dirname, 'files');
+
 const list = async () => {
-    // Write your code here 
+  try {
+    const files = await fs.readdir(sourceFolderPath);
+    console.log(files);
+  } catch (err) {
+    if (err.code === 'ENOENT') {
+      throw new Error('FS operation failed');
+    } else {
+      console.error(err);
+    }
+  }
 };
 
 await list();
